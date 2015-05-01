@@ -79,7 +79,7 @@ while  not finished do
       if current_state.instance_variable_get(:@statehood) === state_statehood
         puts "What is the approximate total area of #{state_name} in square miles?"
         state_area = gets.chomp
-        if current_state.instance_variable_get(:@area) === state_area.to_i
+        if current_state.instance_variable_get(:@area) >= (state_area.to_i * 0.98) && current_state.instance_variable_get(:@area) <= (state_area.to_i * 1.02)
           puts "What is the capital of #{state_name}?"
           state_capital = gets.chomp
           if current_state.instance_variable_get(:@capital) === state_capital
@@ -88,7 +88,7 @@ while  not finished do
             if current_state.instance_variable_get(:@nickname) === state_nickname
               puts "What is the approximate population of #{state_name}?"
               state_population = gets.chomp
-              if current_state.instance_variable_get(:@population) === state_population.to_i
+              if current_state.instance_variable_get(:@population) >= (state_population.to_i * 0.98) && current_state.instance_variable_get(:@population) <= (state_population.to_i * 1.02)
                 puts "What is the state bird of #{state_name}?"
                 state_bird = gets.chomp
                 if current_state.instance_variable_get(:@bird) === state_bird
@@ -124,7 +124,7 @@ while  not finished do
             puts "Double check your spelling."
           end
         else
-          puts "Double check your number corresponds to square miles."
+          puts "Double check if your number corresponds to square miles."
         end
       else 
         puts "Double check your date or your formatting."
